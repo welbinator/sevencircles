@@ -1,0 +1,107 @@
+/* my code */
+html {
+  overflow-x: hidden;
+}
+body {
+  padding-top: 10vh;
+}
+/* utilities */
+.container {
+  width: 100%;
+  max-width: 1440px;
+  margin: auto;
+}
+
+/* hero slider styles */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  .slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .slide.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.slider-nav {
+  width: 200px;
+  display: flex;
+  position: absolute;
+  bottom: -100px;
+
+  i::before {
+    font-size: 50px;
+  }
+}
+.next,
+.prev {
+  // background: pink;
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+
+/* main styles */
+
+header {
+  width: 100vw;
+  height: 100px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .navbar-toggler {
+      display: none;
+    }
+    .navbar-nav {
+      list-style: none;
+      display: flex;
+    }
+    #navbarNavDropdown {
+      display: none;
+    }
+    img.custom-logo {
+      max-height: 8vh;
+    }
+  }
+}
+
+section {
+  &.hero {
+    height: 55vh;
+    position: relative;
+  }
+}
